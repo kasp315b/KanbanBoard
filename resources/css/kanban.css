@@ -3,6 +3,10 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-image: url('../background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }
 
 * {
@@ -47,13 +51,13 @@ body {
 
 /* #region KANBAN BOARD */
 
-#kanban-board {
+div.kanban-board {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
 }
 
-.kanban-column {
+div.kanban-column {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -61,47 +65,128 @@ body {
     margin: 10px;
     margin-left: 0;
     padding: 7px;
+
+    border-radius: 5px;
+
+    background-color: #EBECF0;
+
+    border: 0;
 }
 
-.kanban-column > * {
+div.kanban-column > * {
     margin-bottom: 7px;
 }
 
-.kanban-column:first-child {
+div.kanban-column:first-child {
     margin-left: 10px;
 }
 
-.kanban-column > div:first-child {
+.kanban-title {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.kanban-column > div:first-child > p {
+.kanban-title > p {
     width: 200px;
     height: 30px;
     margin: 0;
 }
 
-.kanban-column > div:first-child > button {
+.kanban-title > button {
     width: 30px;
     height: 30px;
     margin: 0;
 }
 
-.kanban-column > div:nth-child(2) {
+.card-container {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
     margin: 0;
     padding: 0;
     overflow-y: auto;
-    max-height: calc(100vh - 163px);
+    max-height: calc(100vh - 170px);
+
+    border: 0;
 }
 
-.kanban-column > div:nth-child(2) > span:not(:last-child) {
+.card-container > div.card:not(:last-child) {
     margin-bottom: 7px;
 }
 
 /* #endregion KANBAN BOARD */
+
+/* #region CARD */
+
+div.card {
+    border-radius: 5px;
+    padding: 5px;
+    padding-bottom: 3px;
+
+    background-color: #FFFFFF;
+
+    border: 0;
+    border-bottom: 1px solid #9A9A9A;
+}
+
+div.card-sticker-container {
+    padding: 0;
+    border: 0;
+}
+
+span.card-sticker {
+    display: inline-block;
+    height: 10px;
+    width: 32px;
+    border-radius: 5px;
+
+    margin: 0;
+    padding: 0;
+
+    margin-left: 3px;
+}
+
+span.card-title {
+    display: block;
+
+    margin-left: 3px;
+    margin-right: 3px;
+
+    margin-top: 3px;
+    margin-bottom: 7px;
+
+    border: 0;
+}
+
+div.card-member-container {
+    height: 28px;
+    padding: 0;
+    margin-top: 5px;
+
+    border: 0;
+}
+
+span.member-badge {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    height: 28px;
+    width: 28px;
+    margin-right: -12px;
+
+    border: 0;
+}
+
+span.member-badge > img {
+    display: inline-block;
+    height: 26px;
+    width: 26px;
+    margin: 0;
+    padding: 0;
+    border-radius: 13px;
+    border: 1px solid black;
+}
+
+/* #endregion CARD */

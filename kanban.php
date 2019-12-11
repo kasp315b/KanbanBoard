@@ -9,37 +9,62 @@
 
         <script type="text/javascript">
 $(document).ready(function() {
-    $('button').on('click', function(e) {
-        $('#con').append($('<span>TEST</span>'));
-    });
 });
         </script>
+
     </head>
     <body>
         <div id="menu-bar" class="horizontal-list">
-            <div><span>L1</span><span>L2</span><span>L3</span></div>
-            <div><span>M1</span><span>M2</span><span>M3</span></div>
-            <div><span>R1</span><span>R2</span><span>R3</span></div>
+            <div><span>HOME</span><span>BOARDS</span><span>SEARCH</span></div>
+            <div><span>LOGO</span></div>
+            <div><span>CREATE</span><span>INFORMATION</span><span>NOTIFICATIONS</span><span>USER</span></div>
         </div>
         <div class="kanban-container">
             <div id="kanban-menu" class="horizontal-list">
-                <div><span>Kanban-menu</span></div>
+                <div>
+                    <span>KANBAN-NAME</span>
+                    <span>FAVORITE-BUTTON</span>
+                    <span class="divisor"></span>
+                    <span>GROUP-NAME</span>
+                    <span class="divisor"></span>
+                    <span>VISIBILITY</span>
+                    <span class="divisor"></span>
+                    <span>BOARD-MEMBERS</span>
+                    <span>INVITE-BUTTON</span>
+                </div>
+                <div>
+                    <span>TOOLS</span>
+                    <span>MENU</span>
+                </div>
             </div>
-            <div id="kanban-board">
-                <div class="kanban-column">
-                    <div>
-                        <p>Kolonne 1</p>
+            <div class="kanban-board">
+                <?php for($col = 0; $col < 3; $col++) { ?>
+                <div class="kanban-column"><!-- Column Container -->
+                    <div class="kanban-title"><!-- Column Title, etc. container -->
+                        <p>Column Name</p>
                         <button>M</button>
                     </div>
-                    <div id="con">
-                        <span>C1I1</span>
-                        <span>C1I2</span>
-                        <span>C1I3</span>
-                        <span>C1I4</span>
-                        <span>C1I5</span>
-                        <span>C1I6</span>
+                    <div class="card-container"><!-- Card Container -->
+                        <?php for($row = 0; $row < 7; $row++) { ?>
+                        <div class="card"><!-- Actual Card -->
+                            <div class="card-sticker-container"><!-- Sticker Container -->
+                                <span class="card-sticker"></span>
+                                <span class="card-sticker"></span>
+                            </div>
+                            <span class="card-title">Descriptive Item Name</span><!-- Card title  -->
+                            <div class="card-badge-container"><!-- Badge Container -->
+                                <span class="card-badge">BD</span>
+                            </div>
+                            <div class="card-member-container"><!-- Member Container -->
+                                <span class="member-badge"><img src="resources/default-profile.jpg" alt="KH" /></span>
+                                <span class="member-badge"><img src="resources/default-profile.jpg" alt="KH" /></span>
+                                <span class="member-badge"><img src="resources/default-profile.jpg" alt="KH" /></span>
+                            </div>
+                        </div>
+                        <?php } ?>
                     </div>
                 </div>
+                <?php } ?>
             </div>
         </div>
     </body>

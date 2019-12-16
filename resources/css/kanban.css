@@ -22,6 +22,7 @@ body {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
+    flex-grow: 0;
     align-items: center;
     justify-content: space-between;
 }
@@ -47,6 +48,16 @@ body {
 .horizontal-list > div > span:first-child {
     margin-left: 4px;
 }
+
+.horizontal-list span.divisor {
+    display: inline-block;
+    height: 20px;
+    width: 1px;
+    min-width: 0;
+    border: 0;
+    border-left: 2px solid rgba(255, 255, 255, .25);
+}
+
 /* #endregion HORIZONTAL LIST */
 
 /* #region KANBAN BOARD */
@@ -55,6 +66,7 @@ div.kanban-board {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
+    flex-grow: 0;
 }
 
 div.kanban-column {
@@ -62,9 +74,11 @@ div.kanban-column {
     flex-wrap: nowrap;
     flex-direction: column;
     width: 280px;
+    height: fit-content;
     margin: 10px;
     margin-left: 0;
     padding: 7px;
+    padding-bottom: 0;
 
     border-radius: 5px;
 
@@ -114,6 +128,20 @@ div.kanban-column:first-child {
 
 .card-container > div.card:not(:last-child) {
     margin-bottom: 7px;
+}
+
+.add-card-container {
+    border: 0;
+    color: rgb(108, 117, 131);
+}
+
+.add-card-container:hover {
+    cursor: pointer;
+    color: #393E46;
+}
+
+.add-card-container * {
+    border: 0;
 }
 
 /* #endregion KANBAN BOARD */
@@ -190,3 +218,34 @@ span.member-badge > img {
 }
 
 /* #endregion CARD */
+
+/* #region ICONS */
+
+.icon {
+    display: inline-block;
+
+    width: 25px;
+    height: 25px;
+    
+    background-color: currentColor;
+    
+    border: 0;
+}
+
+.icon.icon-sm {
+    width: 12px;
+    height: 12px;
+}
+
+.icon.icon-lg {
+    width: 45px;
+    height: 45px;
+}
+
+.icon.cross {
+    clip-path: polygon(0 40%, 40% 40%, 40% 0, 60% 0, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0 60%);
+}
+
+/* #endregion ICONS */
+
+

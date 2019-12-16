@@ -4,6 +4,10 @@
         <link rel="stylesheet" href="resources/css/kanban.css" />
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
         <script type="text/javascript" src="resources/js/kanban.js"></script>
         
 
@@ -38,14 +42,14 @@ $(document).ready(function() {
                 </div>
             </div>
             <div class="kanban-board">
-                <?php for($col = 0; $col < 3; $col++) { ?>
+                <?php for($col = 0; $col < rand(2, 5); $col++) { ?>
                 <div class="kanban-column"><!-- Column Container -->
                     <div class="kanban-title"><!-- Column Title, etc. container -->
                         <p>Column Name</p>
                         <button>M</button>
                     </div>
                     <div class="card-container"><!-- Card Container -->
-                        <?php for($row = 0; $row < 7; $row++) { ?>
+                        <?php for($row = 0; $row < rand(3, 7); $row++) { ?>
                         <div class="card"><!-- Actual Card -->
                             <div class="card-sticker-container"><!-- Sticker Container -->
                                 <span class="card-sticker"></span>
@@ -56,12 +60,16 @@ $(document).ready(function() {
                                 <span class="card-badge">BD</span>
                             </div>
                             <div class="card-member-container"><!-- Member Container -->
+                                <?php for($member = 0; $member < rand(1, 3); $member++) { ?>
                                 <span class="member-badge"><img src="resources/default-profile.jpg" alt="KH" /></span>
-                                <span class="member-badge"><img src="resources/default-profile.jpg" alt="KH" /></span>
-                                <span class="member-badge"><img src="resources/default-profile.jpg" alt="KH" /></span>
+                                <?php } ?>
                             </div>
                         </div>
                         <?php } ?>
+                    </div>
+                    <div class="add-card-container">
+                        <span class="icon icon-sm cross"></span>
+                        <span>Add a new card</span>
                     </div>
                 </div>
                 <?php } ?>

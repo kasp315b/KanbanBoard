@@ -42,7 +42,7 @@ $(document).ready(function() {
                 </div>
             </div>
             <div class="kanban-board">
-                <?php for($col = 0; $col < rand(2, 5); $col++) { ?>
+                <?php for($col = 0; $col < rand(3, 5); $col++) { ?>
                 <div class="kanban-column"><!-- Column Container -->
                     <div class="kanban-title"><!-- Column Title, etc. container -->
                         <p>Column Name</p>
@@ -60,7 +60,7 @@ $(document).ready(function() {
                                 <span class="card-badge">BD</span>
                             </div>
                             <div class="card-member-container"><!-- Member Container -->
-                                <?php for($member = 0; $member < rand(1, 3); $member++) { ?>
+                                <?php for($member = 0; $member < rand(1, 5); $member++) { ?>
                                 <span class="member-badge"><img src="resources/default-profile.jpg" alt="KH" /></span>
                                 <?php } ?>
                             </div>

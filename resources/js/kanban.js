@@ -52,7 +52,21 @@ function createDraggableCards() {
 
         drop: function(event) {
             if(currentlyHovering != null) {
-                currentlyDragging.appendTo(currentlyHovering.find('.card-container')[0]);
+                let cardContainer = $(currentlyHovering.find('.card-container')[0]);
+
+                let cardsInContainer = cardContainer.find('.card');
+                let numCardsInContainer = cardsInContainer.length;
+
+                if(numCardsInContainer > 0) {
+                    let draggingMiddleY = event.pageY + currentlyDragging.height() / 2;
+                    for(var cardIndex = 0; cardIndex < numCardsInContainer; cardIndex++) {
+                        let currentCard = $(cardsInContainer[cardIndex]);
+                        let currentCardMiddle = currentCard.position().top + currentCard.height() / 2;
+                        
+                    }
+                } else {
+                    currentlyDragging.appendTo(cardContainer);
+                }
             }
         }
     });
